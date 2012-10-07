@@ -1,4 +1,3 @@
-# $Revision: 1.5 $, $Date: 2011/07/23 06:35:45 $
 Summary:	OUnit: unit tests for OCaml
 Summary(pl.UTF-8):	OUnit - testy jednostkowe dla OCamla
 Name:		ocaml-ounit
