@@ -1,8 +1,16 @@
+#
+# Conditional build:
+%bcond_without	ocaml_opt		# build opt
+
+%ifarch x32
+%undefine	with_ocaml_opt
+%endif
+
 Summary:	OUnit: unit tests for OCaml
 Summary(pl.UTF-8):	OUnit - testy jednostkowe dla OCamla
 Name:		ocaml-ounit
 Version:	2.0.0
-Release:	2
+Release:	3
 License:	MIT
 Group:		Libraries
 Source0:	http://forge.ocamlcore.org/frs/download.php/1258/ounit-%{version}.tar.gz
@@ -57,9 +65,11 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS.txt LICENSE.txt README.txt doc/manual.txt src/oUnit*.mli
 %dir %{_libdir}/ocaml/oUnit
+%if %{with ocaml_opt}
 %{_libdir}/ocaml/oUnit/oUnit.a
 %{_libdir}/ocaml/oUnit/oUnitAdvanced.a
 %{_libdir}/ocaml/oUnit/oUnitThreads.a
+%endif
 %{_libdir}/ocaml/oUnit/oUnit*.cm[ixa]*
 %{_libdir}/ocaml/oUnit/oUnit*.ml
 %{_libdir}/ocaml/site-lib/oUnit
