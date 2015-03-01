@@ -17,6 +17,7 @@ Source0:	http://forge.ocamlcore.org/frs/download.php/1258/ounit-%{version}.tar.g
 # Source0-md5:	2e0a24648c55005978d4923eb4925b28
 URL:		http://ounit.forge.ocamlcore.org/
 BuildRequires:	ocaml >= 3.04-7
+BuildRequires:	ocaml-findlib
 %requires_eq	ocaml
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
