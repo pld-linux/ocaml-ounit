@@ -10,7 +10,7 @@ Summary:	OUnit: unit tests for OCaml
 Summary(pl.UTF-8):	OUnit - testy jednostkowe dla OCamla
 Name:		ocaml-ounit
 Version:	2.0.0
-Release:	5
+Release:	6
 License:	MIT
 Group:		Libraries
 Source0:	http://forge.ocamlcore.org/frs/download.php/1258/ounit-%{version}.tar.gz
