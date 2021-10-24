@@ -1,0 +1,39 @@
+From fec0a725231d5769b3d3454687d6b0e1bd6b5e58 Mon Sep 17 00:00:00 2001
+From: "Richard W.M. Jones" <rjones@redhat.com>
+Date: Tue, 5 May 2020 12:30:50 +0100
+Subject: [PATCH] Remove stdlib-shims.
+
+We neither need nor want the stdlib-shims package in Fedora.  It is a
+forward compatibility package for older OCaml installations.  Patch it
+out instead.  Upstream does not want this patch until stdlib-shims is
+obsolete.
+---
+ ounit2.opam                  | 1 -
+ src/lib/ounit2/advanced/dune | 2 +-
+ 2 files changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/ounit2.opam b/ounit2.opam
+index d07d8ca..2ae6fe9 100644
+--- a/ounit2.opam
++++ b/ounit2.opam
+@@ -10,7 +10,6 @@ depends: [
+   "dune" {>= "1.11.0"}
+   "base-bytes"
+   "base-unix"
+-  "stdlib-shims"
+ ]
+ build: [
+   ["dune" "build" "-p" name "-j" jobs]
+diff --git a/src/lib/ounit2/advanced/dune b/src/lib/ounit2/advanced/dune
+index df87fe1..529a7e4 100644
+--- a/src/lib/ounit2/advanced/dune
++++ b/src/lib/ounit2/advanced/dune
+@@ -7,4 +7,4 @@
+   (name oUnitAdvanced)
+   (public_name ounit2.advanced)
+   (wrapped false)
+-  (libraries unix bytes stdlib-shims))
++  (libraries unix bytes))
+-- 
+2.29.2
+
