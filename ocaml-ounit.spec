@@ -26,6 +26,10 @@ BuildRequires:	ocaml-lwt-devel
 %requires_eq	ocaml
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
+%if %{without ocaml_opt}
+%define		_enable_debug_packages	0
+%endif
+
 %description
 OUnit is a unit testing framework for OCaml, inspired by the JUnit
 tool for Java, and the HUnit tool for Haskell.
