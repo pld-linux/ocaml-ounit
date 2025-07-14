@@ -55,8 +55,8 @@ użyciu biblioteki OUnit.
 
 %prep
 %setup -q -n ounit-v%{version}
-%patch0 -p1
-%patch1 -p1
+%patch -P0 -p1
+%patch -P1 -p1
 
 %build
 dune build @all --verbose
