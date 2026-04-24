@@ -73,7 +73,7 @@ cp -pr examples/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/ocaml/{ounit2,ounit2-lwt}/*.ml
 %{__rm} $RPM_BUILD_ROOT%{_libdir}/ocaml/ounit2/*/*.ml
 # packaged as %doc
-%{__rm} -r $RPM_BUILD_ROOT%{_prefix}/doc/{ounit,ounit-lwt,ounit2,ounit2-lwt}
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/{ounit,ounit-lwt,ounit2,ounit2-lwt}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
