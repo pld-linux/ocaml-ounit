@@ -17,23 +17,23 @@ index d07d8ca..2ae6fe9 100644
 --- a/ounit2.opam
 +++ b/ounit2.opam
 @@ -10,7 +10,6 @@ depends: [
-   "dune" {>= "1.11.0"}
-   "base-bytes"
+   "ocaml" {>= "4.04.0"}
    "base-unix"
+   "seq"
 -  "stdlib-shims"
+   "odoc" {with-doc}
  ]
  build: [
-   ["dune" "build" "-p" name "-j" jobs]
 diff --git a/src/lib/ounit2/advanced/dune b/src/lib/ounit2/advanced/dune
 index df87fe1..529a7e4 100644
 --- a/src/lib/ounit2/advanced/dune
 +++ b/src/lib/ounit2/advanced/dune
 @@ -7,4 +7,4 @@
-   (name oUnitAdvanced)
-   (public_name ounit2.advanced)
-   (wrapped false)
--  (libraries unix bytes stdlib-shims))
-+  (libraries unix bytes))
+  (name oUnitAdvanced)
+  (public_name ounit2.advanced)
+  (wrapped false)
+- (libraries unix seq stdlib-shims))
++ (libraries unix seq))
 -- 
 2.29.2
 

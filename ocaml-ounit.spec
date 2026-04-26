@@ -9,26 +9,26 @@
 Summary:	OUnit: unit tests for OCaml
 Summary(pl.UTF-8):	OUnit - testy jednostkowe dla OCamla
 Name:		ocaml-ounit
-Version:	2.2.4
+Version:	2.2.7
 Release:	1
 License:	MIT
 Group:		Development/Libraries
 #Source0Download: https://github.com/gildor478/ounit/releases
-Source0:	https://github.com/gildor478/ounit/releases/download/v%{version}/ounit-v%{version}.tbz
-# Source0-md5:	7cc70da6eb7a69bc18936ade68dfae61
+Source0:	https://github.com/gildor478/ounit/releases/download/v%{version}/ounit-%{version}.tbz
+# Source0-md5:	4dacf6a97a79fa725fcb26bcdf61e23b
 Patch0:		%{name}-remove-stdlib-shims.patch
-Patch1:		%{name}-remove-Thread-kill.patch
 URL:		https://github.com/gildor478/ounit
 BuildRequires:	ocaml >= 1:4.04.0
 BuildRequires:	ocaml-dune >= 1.11.0
 BuildRequires:	ocaml-findlib
 BuildRequires:	ocaml-lwt-devel
+BuildRequires:	ocaml-result-devel
+BuildRequires:	ocaml-mmap-devel
+BuildRequires:	ocaml-ocplib-endian-devel
 %requires_eq	ocaml
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%if %{without ocaml_opt}
 %define		_enable_debug_packages	0
-%endif
 
 %description
 OUnit is a unit testing framework for OCaml, inspired by the JUnit
@@ -54,9 +54,8 @@ Biblioteka zawierająca funkcje pomocnicze do tworzenia testów Lwt przy
 użyciu biblioteki OUnit.
 
 %prep
-%setup -q -n ounit-v%{version}
+%setup -q -n ounit-%{version}
 %patch -P0 -p1
-%patch -P1 -p1
 
 %build
 dune build @all --verbose
